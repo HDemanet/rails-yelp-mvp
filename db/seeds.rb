@@ -7,3 +7,17 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+restaurants = [
+  { name: "Chez Pierre", address: "10 Rue de la République, Paris", category: "french" },
+  { name: "Sushi World", address: "20 Rue de l'Asie, Paris", category: "japanese" },
+  { name: "La Bella Italia", address: "30 Via Roma, Milan", category: "italian" },
+  { name: "Le Palais de la Chine", address: "5 Rue des Dragons, Paris", category: "chinese" },
+  { name: "Brasserie Belge", address: "50 Avenue des Flandres, Bruxelles", category: "belgian" }
+]
+
+restaurants.each do |restaurant|
+  Restaurant.find_or_create_by!(restaurant)
+end
+
+puts "Restaurants have been seeded!"

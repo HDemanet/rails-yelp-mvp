@@ -1,0 +1,16 @@
+<h2 class="mb-4">Reviews</h2>
+
+<div class="row">
+  <% @restaurant.reviews.each do |review| %>
+    <div class="col-12 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <h5 class="card-title">Rating: <span class="badge bg-warning text-dark"><%= review.rating %>/5</span></h5>
+          </div>
+          <p class="card-text"><strong>Content:</strong> <%= review.content %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

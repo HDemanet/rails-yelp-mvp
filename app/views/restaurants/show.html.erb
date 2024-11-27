@@ -1,0 +1,31 @@
+<h1 class="mb-4"><%= @restaurant.name %></h1>
+
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">Restaurant details</h5>
+    <p class="card-text">
+      <strong>Address:</strong> <%= @restaurant.address %><br>
+      <strong>Category:</strong> <%= @restaurant.category.capitalize %><br>
+      <strong>Phone Number:</strong> <%= @restaurant.phone_number %>
+    </p>
+  </div>
+</div>
+
+<%= render 'reviews/review_list', restaurant: @restaurant %>
+
+<h3 class="mt-5">Add a Review</h3>
+
+<%= render 'reviews/review_form', restaurant: @restaurant, review: @review %>
+
+<% if @review.errors.any? %>
+  <div class="alert alert-danger mt-3">
+    <h4>There were some errors:</h4>
+    <ul>
+      <% @review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= link_to 'Back to restaurants list', restaurants_path, class: 'btn btn-outline-secondary mt-3' %>
